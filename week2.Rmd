@@ -1,0 +1,83 @@
+Regression Models: Week#2 
+========================================================
+Example # 2: Linear Regression Model on Diamonds dataset
+
+Data is diamond prices (Signapore dollars) and diamond weight in carats (standard measure of diamond mass, 0.2 g). 
+
+```{r}
+#ls()
+#rm(list = ls())
+```
+
+
+```{r}
+library(UsingR); data(diamond)
+plot(diamond$carat, diamond$price,
+     xlab = "Mass (carats)",
+     ylab = "Price (SIN $)",
+     bg   = "lightblue",
+     col  = "black", cex = 1.1, pch = 21, frame = FALSE)
+
+abline(lm(price ~ carat, data = diamond), lwd = 2)
+```
+
+You can also embed plots, for example:
+Fitting the linear regression model. 
+
+```{r}
+fit  <- lm(price ~ carat, data = diamond)
+coef(fit)
+```
+
+* We estimate an expected 3721.02 (SIN) dollar increase in price for every carat increase in mass of diamond.
+
+* The intercept -259.63 is the expected price of a 0 carat diamond.
+
+##Getting a more interpretable intercept 
+
+```{r}
+fit2  <- lm(price ~ I(carat - mean(carat)), data = diamond)
+coef(fit2)
+```
+
+
+```{r}
+help(package="graphics")
+```
+
+
+```{r}
+names(par())
+```
+
+
+```{r}
+curve(5*x^2)
+```
+
+
+```{r}
+curve(5*x^3, add=T)
+```
+
+
+```{r}
+curve(5*x^5, add=T)
+```
+
+
+```{r}
+?curve
+```
+
+
+```{r}
+example(arrows)
+```
+
+
+
+
+
+
+
