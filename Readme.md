@@ -1,7 +1,9 @@
 Convert Rmd to ipynb 
 
+```
 notedown ./Week1.Rmd --knit > ./Week1.ipynb
 notedown ./week2.Rmd --knit > ./week2.ipynb
+```
 
 nbviewer link for notebooks 
 
